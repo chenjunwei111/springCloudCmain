@@ -1,0 +1,8 @@
+server:
+  port: 8888
+eureka:
+  instance:
+      homename: 192.100.3.6
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

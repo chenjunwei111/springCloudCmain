@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: id-client-01 #自定义的唯一ID
+          uri: lb://client-01 #指向的服务name
+          predicates:
+            - Path=/service/** #访问的地址后缀
+          filters:
+            - StripPrefix=1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/

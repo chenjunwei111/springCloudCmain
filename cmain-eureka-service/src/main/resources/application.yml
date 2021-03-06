@@ -1,0 +1,5 @@
+spring:
+              application:
+                name: eurka-server
+              profiles:
+                active: test

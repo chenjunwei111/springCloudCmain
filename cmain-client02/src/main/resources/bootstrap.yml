@@ -1,0 +1,11 @@
+server:
+  port: 8885
+
+spring:
+  application:
+    name: client-02
+  cloud:
+    config:
+      name: client-02
+      profile: dev
+      uri: http://localhost:8769

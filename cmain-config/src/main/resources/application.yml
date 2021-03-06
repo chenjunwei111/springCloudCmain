@@ -1,0 +1,19 @@
+server:
+  port: 8769
+
+spring:
+  application:
+    name: cmain-config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/share
+
+eureka:
+  client:
+    serviceUrl:
+      #      eureka的注册中心地址
+      defaultZone: http://localhost:8888/eureka/
